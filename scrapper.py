@@ -16,7 +16,7 @@ header = ['Titles', 'URL', 'Notes']
 rows = []
 
 # find the list of publications under "CHIME Publications" section.
-for li in soup.find(name='h2', text='CHIME Publications').find_next_sibling(name='ul'):
+for li in soup.find(name='h2', string='CHIME Publications').find_next_sibling(name='ul'):
     url = li.find(href=True)
     rows.append([li.find('a', href=True).contents[0], url['href'], li.contents[2]])
 
